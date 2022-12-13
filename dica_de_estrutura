@@ -1,0 +1,86 @@
+#define botaopin = 999;
+int apertou=0;
+int soltou =0;
+int x=0;
+
+int freq = 100:
+int freq_div_by_2 = 50;
+
+//finge que aqui tme um laço de interrupt de 1ms
+    //aqui tu limpa a flag da interrupt
+
+    if(apertou==0)
+        {
+            if(botaopin==1)
+                x++;
+            else
+                x=0;
+            
+            if(x==10)
+            {
+                x=0;
+                apertou=1;
+            }
+        }
+    if(apertou==1)
+        {
+            if(botaopin==0)
+                x++;
+
+            else
+                x=0;
+                y++
+            
+            if(x==10)
+            {
+                x=0;
+                soltou=1;
+                apertou=3;//somente para nao entrar nos ifs anteriores
+            }
+            if(y==50)
+            {
+                //talvez seja necessario aumentar o valor de 50 para 100, 150 e enfins, para ajustar o intervalo
+                //desliga a interrupt e sorteia o numero do dado, já passou 50ms desde o primeiro aperto
+                //executa o sorteio com 1 aperto de botao
+            }
+
+        }
+
+    if(soltou==1)
+        {
+            if(botaopin==1)
+                x++;
+            else
+                x=0;
+            
+            if(x==10)
+            {
+                x=0;
+                apertou=2;
+                soltou=3;//somente para nao entrar nos ifs anteriores
+            }
+
+        }
+   
+
+void main(void)
+{
+    if (apertou == 1)
+    {   
+        //reset variaveis
+        apertou=0;
+        soltou=0;
+        x=0;
+        y=0;
+        //function sorteia o dado com freq = 100
+    }    
+    if (apertou == 2)
+    {
+        //reset variaveis
+        apertou=0;
+        soltou=0;
+        x=0;
+        y=0;
+        //function sorteia o dado com freq_div_by_2 = 50
+    } 
+}
